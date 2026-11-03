@@ -1,87 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="BROTOTO, studio de développement de jeux et applications mobiles.">
-  <title>BROTOTO - Jeux et applications</title>
+  <meta name="description" content="Brototo est un studio français qui imagine des jeux et des expériences mobiles créatives.">
+  <meta name="theme-color" content="#17133b">
+  <title>BROTOTO — Des idées qui se jouent</title>
   <style>
+    :root { color-scheme: light; --ink: #1e1947; --pink: #f86daa; --purple: #7654e8; --lime: #d5f779; --cream: #fffaf1; }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #10121a;
-      color: #f4f5f8;
-      font: 16px Arial, sans-serif;
-      line-height: 1.65;
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid #f86daa; outline-offset: 5px; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: auto; }
+    header { background: #17133b; color: white; }
+    .nav { min-height: 84px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .brand { text-decoration: none; font-size: 24px; font-weight: 900; letter-spacing: -.06em; }
+    .brand span { color: var(--lime); }
+    nav { display: flex; gap: 28px; align-items: center; font-size: 14px; font-weight: 700; }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--lime); }
+    .hero { overflow: hidden; background: #17133b; color: white; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 45px; align-items: center; min-height: 575px; padding-top: 45px; padding-bottom: 95px; }
+    .eyebrow { margin: 0 0 18px; color: var(--lime); font-size: 12px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 650px; margin-bottom: 24px; font-size: clamp(52px, 7.5vw, 90px); line-height: .98; letter-spacing: -.065em; }
+    h1 em { color: var(--lime); font-style: normal; }
+    .intro { max-width: 500px; color: #d8d5ee; font-size: 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 13px 22px; border-radius: 100px; background: var(--lime); color: var(--ink); font-weight: 800; text-decoration: none; transition: transform .2s; }
+    .button:hover { transform: translateY(-3px); }
+    .button.secondary { color: white; border: 1px solid #77718f; background: transparent; }
+    .art { position: relative; min-height: 390px; display: grid; place-items: center; }
+    .art-bg { position: absolute; width: min(100%, 440px); aspect-ratio: 1; border-radius: 39% 61% 57% 43% / 44% 41% 59% 56%; background: #7654e8; transform: rotate(-12deg); }
+    .art-bg::before, .art-bg::after { content: ''; position: absolute; border-radius: 50%; }
+    .art-bg::before { width: 110px; height: 110px; top: -22px; left: 38px; background: #f86daa; }
+    .art-bg::after { width: 70px; height: 70px; right: -20px; bottom: 56px; background: #ffbd67; }
+    .phone { z-index: 1; width: 230px; height: 340px; padding: 12px; border: 6px solid #20194e; border-radius: 38px; background: #fff; box-shadow: 16px 24px 0 #29215b; transform: rotate(9deg); }
+    .screen { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 24px; background: #ffcb75; text-align: center; overflow: hidden; }
+    .screen .sparkle { color: #f260a1; font-size: 36px; }
+    .screen strong { padding: 0 12px; color: #35215e; font-size: 31px; line-height: 1.05; letter-spacing: -.05em; }
+    .screen small { margin-top: 14px; color: #61365d; font-weight: 800; font-size: 11px; letter-spacing: .12em; }
+    .sticker { position: absolute; z-index: 2; right: 0; bottom: 42px; display: grid; place-items: center; width: 106px; height: 106px; border-radius: 50%; background: var(--lime); color: #241b4a; font-size: 13px; line-height: 1.2; font-weight: 900; text-align: center; transform: rotate(13deg); }
+    section { padding: 100px 0; }
+    .section-top { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .section-top p { max-width: 330px; margin-bottom: 4px; color: #635d77; }
+    .section-label { color: #7453d8; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin-bottom: 0; font-size: clamp(38px, 5vw, 60px); line-height: 1.03; letter-spacing: -.055em; }
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .project { position: relative; min-height: 280px; padding: 32px; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; align-items: start; justify-content: end; }
+    .project::after { content: ''; position: absolute; width: 230px; height: 230px; border: 38px solid rgba(255,255,255,.25); border-radius: 50%; right: -36px; top: -45px; }
+    .project > * { position: relative; z-index: 1; }
+    .project.couple { background: #ffb8cf; }
+    .project.future { background: #cfbfff; }
+    .pill { padding: 6px 11px; border-radius: 50px; background: rgba(255,255,255,.6); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .project h3 { margin: 18px 0 8px; font-size: 32px; line-height: 1.1; letter-spacing: -.04em; }
+    .project p { max-width: 360px; margin-bottom: 16px; }
+    .project a { font-weight: 800; text-underline-offset: 4px; }
+    .about { background: #e8f6c3; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+    .about p { max-width: 500px; font-size: 18px; color: #454a38; }
+    .contact { padding: 85px 0; background: #f86daa; }
+    .contact-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; }
+    .contact p { margin: 12px 0 0; }
+    .contact .button { background: #1e1947; color: white; }
+    footer { padding: 38px 0; color: #c3bfdb; background: #17133b; font-size: 13px; }
+    .footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+    footer .brand { color: white; }
+    .legal { margin-top: 22px; color: #aaa5c2; }
+    .legal p { margin: 4px 0; }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 36px, 1120px); }
+      .nav { min-height: 72px; }
+      nav { gap: 16px; font-size: 13px; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 5px; padding-top: 60px; padding-bottom: 65px; }
+      .art { min-height: 360px; }
+      .art-bg { width: 320px; }
+      .phone { width: 195px; height: 295px; }
+      .sticker { right: 3%; }
+      section { padding: 70px 0; }
+      .section-top { align-items: start; flex-direction: column; }
+      .projects { grid-template-columns: 1fr; }
     }
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 100px 24px 60px;
-    }
-    .tag {
-      color: #a5a9bb;
-      letter-spacing: 3px;
-      font-size: 13px;
-    }
-    h1 {
-      font-size: clamp(36px, 7vw, 64px);
-      line-height: 1.15;
-      margin: 20px 0;
-    }
-    p { color: #b9bdca; }
-    a { color: #94b9ff; }
-    section { margin-top: 65px; }
-    footer {
-      margin-top: 90px;
-      border-top: 1px solid #303440;
-      padding-top: 25px;
-      font-size: 13px;
-      color: #9296a4;
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
   </style>
 </head>
 <body>
-  <main>
-    <p class="tag">BROTOTO SAS</p>
-
-    <h1>Nous créons des expériences interactives.</h1>
-
-    <p>
-      BROTOTO est un studio français de développement
-      de jeux vidéo et d'applications mobiles.
-      Nous concevons des expériences accessibles,
-      créatives et divertissantes.
-    </p>
-
-    <section>
-      <h2>Nos projets</h2>
-      <p>
-        <a href="https://couple-arena.com">
-          Couple Arena
-        </a>
-        - Jeux et expériences interactives pour couples.
-      </p>
-      <p>
-        D'autres jeux mobiles sont en préparation.
-      </p>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Brototo, accueil">BROTO<span>TO.</span></a>
+      <nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#studio">Le studio</a><a href="#contact">Contact</a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Studio indépendant · France</p>
+          <h1>Des idées qui <em>se jouent.</em></h1>
+          <p class="intro">Chez Brototo, nous imaginons des jeux et des expériences mobiles créatives, accessibles et pleines de bonne humeur.</p>
+          <div class="actions"><a class="button" href="#projets">Découvrir nos projets <span aria-hidden="true">&nbsp;↗</span></a><a class="button secondary" href="#contact">Nous contacter</a></div>
+        </div>
+        <div class="art" aria-hidden="true"><div class="art-bg"></div><div class="phone"><div class="screen"><span class="sparkle">✦</span><strong>PLAY<br>CREATE<br>REPEAT.</strong><small>GOOD IDEAS INSIDE</small></div></div><div class="sticker">MADE<br>FOR FUN ✦</div></div>
+      </div>
+    </div>
+    <section id="projets">
+      <div class="wrap">
+        <div class="section-top"><div><p class="section-label">Notre univers</p><h2>Des projets à<br>découvrir.</h2></div><p>Des idées ludiques, pensées pour partager de bons moments.</p></div>
+        <div class="projects">
+          <article class="project couple"><span class="pill">Jeux à deux</span><h3>Couple Arena</h3><p>Des jeux et expériences interactives à partager en couple.</p><a href="https://couple-arena.com">Découvrir Couple Arena ↗</a></article>
+          <article class="project future"><span class="pill">En préparation</span><h3>La suite arrive.</h3><p>De nouvelles idées et de nouveaux jeux mobiles prennent forme chez Brototo.</p></article>
+        </div>
+      </div>
     </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Adresse professionnelle : alexandre@brototo.fr</p>
-    </section>
-
-    <footer>
-      <p>BROTOTO SAS - France</p>
-      <p>SIREN : 943855155</p>
-      <p>Siège social : 2 RUE SAINT-JEAN, 51340 VANAULT-LES-DAMES</p>
-      <p>Directeur de publication : Alexandre ROSA</p>
-      <p>Hébergement : GitHub Pages, GitHub Inc.</p>
-      <p>© 2026 BROTOTO. Tous droits réservés.</p>
-    </footer>
+    <section id="studio" class="about"><div class="wrap about-grid"><div><p class="section-label">Bonjour, nous c’est Brototo</p><h2>De la créativité<br>dans la poche.</h2></div><div><p>Brototo est un studio français de développement de jeux vidéo et d’applications mobiles. Nous aimons transformer des idées simples en expériences divertissantes.</p><p>Notre envie : créer des moments de jeu faciles à découvrir et agréables à partager.</p></div></div></section>
+    <section id="contact" class="contact"><div class="wrap contact-row"><div><p class="section-label">On se parle ?</p><h2>Une idée, une question ?</h2><p>Nous serions ravis d’échanger avec vous.</p></div><a class="button" href="mailto:alexandre@brototo.fr">Écrivez-nous ↗</a></div></section>
   </main>
+  <footer><div class="wrap"><div class="footer-top"><a class="brand" href="#top">BROTO<span>TO.</span></a><a href="/privacy/">Privacy Policy</a></div><div class="legal"><p>BROTOTO SAS - France · SIREN : 943855155</p><p>Siège social : 2 RUE SAINT-JEAN, 51340 VANAULT-LES-DAMES</p><p>Directeur de publication : Alexandre ROSA · Hébergement : GitHub Pages, GitHub Inc.</p><p>© 2026 BROTOTO. Tous droits réservés.</p></div></div></footer>
 </body>
 </html>
