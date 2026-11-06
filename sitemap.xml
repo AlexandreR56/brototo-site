@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://brototo.fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brototo.fr/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brototo.fr/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brototo.fr/"/>
+  </url>
+  <url>
+    <loc>https://brototo.fr/?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brototo.fr/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brototo.fr/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brototo.fr/"/>
+  </url>
+  <url>
+    <loc>https://brototo.fr/games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brototo.fr/games/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brototo.fr/games/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brototo.fr/games/"/>
+  </url>
+  <url>
+    <loc>https://brototo.fr/games/?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brototo.fr/games/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brototo.fr/games/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brototo.fr/games/"/>
+  </url>
+  <url>
+    <loc>https://brototo.fr/games/idle-egg-tycoon/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brototo.fr/games/idle-egg-tycoon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brototo.fr/games/idle-egg-tycoon/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brototo.fr/games/idle-egg-tycoon/"/>
+  </url>
+  <url>
+    <loc>https://brototo.fr/games/idle-egg-tycoon/?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brototo.fr/games/idle-egg-tycoon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brototo.fr/games/idle-egg-tycoon/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brototo.fr/games/idle-egg-tycoon/"/>
+  </url>
+  <url>
+    <loc>https://brototo.fr/privacy/</loc>
+  </url>
+</urlset>

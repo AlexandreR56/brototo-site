@@ -1,0 +1,16 @@
+# BROTOTO
+
+> BROTOTO is a French independent studio creating accessible mobile games and playful experiences.
+
+The public site is https://brototo.fr/. English is the default language. The home page, games listing and game page also have French versions at the same URL with `?lang=fr`. The privacy policy is currently available in English.
+
+## Pages
+
+- [Home](https://brototo.fr/): studio overview and contact details.
+- [Games](https://brototo.fr/games/): current game catalogue.
+- [Idle Egg Tycoon](https://brototo.fr/games/idle-egg-tycoon/): a free mobile game about creating monsters from eggs, with gameplay details and screenshots. Coming soon; the site has no public store link yet.
+- [Privacy Policy](https://brototo.fr/privacy/): data handling for BROTOTO games and apps.
+
+## About the studio
+
+BROTOTO SAS is based in France. Contact: alexandre@brototo.fr. The site's game catalogue currently contains Idle Egg Tycoon; the home page also links to the separate Couple Arena project.

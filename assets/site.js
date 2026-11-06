@@ -1,10 +1,20 @@
 (() => {
-  if (new URLSearchParams(window.location.search).get('lang') !== 'fr') return;
+  const isFrench = new URLSearchParams(window.location.search).get('lang') === 'fr';
+  const canonicalBase = document.documentElement.dataset.canonicalBase;
+  if (canonicalBase) {
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = canonicalBase + (isFrench ? '?lang=fr' : '');
+    document.head.append(canonical);
+  }
+
+  if (!isFrench) return;
 
   document.documentElement.lang = 'fr';
 
-  const description = document.querySelector('meta[name="description"][data-fr-content]');
-  if (description) description.content = description.dataset.frContent;
+  document.querySelectorAll('meta[data-fr-content]').forEach(meta => {
+    meta.content = meta.dataset.frContent;
+  });
 
   document.querySelectorAll('[data-fr]').forEach(element => {
     element.textContent = element.dataset.fr;

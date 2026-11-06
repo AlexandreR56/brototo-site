@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">BROTOTO</title>
+  <desc id="description">Brototo games and playful experiences</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbe5de"/>
+      <stop offset=".55" stop-color="#f8dbe1"/>
+      <stop offset="1" stop-color="#f6e4ee"/>
+    </linearGradient>
+    <linearGradient id="controller" x2=".9" y2="1">
+      <stop offset="0" stop-color="#ff9d91"/>
+      <stop offset="1" stop-color="#f56e84"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1080" cy="70" r="240" fill="#ffe8c6" opacity=".55"/>
+  <circle cx="785" cy="550" r="235" fill="#e9c7dc" opacity=".5"/>
+  <text x="74" y="180" fill="#493445" font-family="Arial, Helvetica, sans-serif" font-size="91" font-weight="900" letter-spacing="-6">BROTO<tspan fill="#985673">TO.</tspan></text>
+  <text x="80" y="280" fill="#493445" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700">Games &amp; playful experiences</text>
+  <text x="80" y="547" fill="#895570" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="5">BROTOTO.FR</text>
+  <g transform="translate(700 137) rotate(-8 200 185)">
+    <path d="M75 89 C87 54 126 40 163 50 L237 66 C249 69 262 69 274 66 L348 50 C385 40 424 54 436 89 L477 288 C484 329 460 364 424 370 C386 376 364 342 346 313 L316 265 C304 245 283 232 259 232 L241 232 C217 232 196 245 184 265 L154 313 C136 342 114 376 76 370 C40 364 16 329 23 288 Z" fill="url(#controller)" stroke="#e9667f" stroke-width="4"/>
+    <rect x="116" y="142" width="33" height="115" rx="12" fill="#743e64"/>
+    <rect x="75" y="183" width="115" height="33" rx="12" fill="#743e64"/>
+    <circle cx="357" cy="162" r="24" fill="#743e64"/>
+    <circle cx="407" cy="207" r="24" fill="#743e64"/>
+    <circle cx="307" cy="207" r="24" fill="#743e64"/>
+    <circle cx="357" cy="252" r="24" fill="#743e64"/>
+    <path d="M227 180 C237 195 263 195 273 180" fill="none" stroke="#743e64" stroke-width="15" stroke-linecap="round"/>
+  </g>
+</svg>
