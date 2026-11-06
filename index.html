@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Brototo est un studio français qui imagine des jeux et des expériences mobiles créatives.">
+  <meta name="description" content="Brototo is a French studio creating playful mobile games and experiences.">
   <meta name="theme-color" content="#fbe5de">
-  <title>BROTOTO — Des idées qui se jouent</title>
+  <title>BROTOTO — Ideas made to play</title>
   <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     :root { color-scheme: light; --ink: #493445; --pink: #f8d2cc; --purple: #895570; --cream: #fffaf5; }
@@ -19,9 +19,12 @@
     .nav { min-height: 84px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
     .brand { text-decoration: none; font-size: 24px; font-weight: 900; letter-spacing: -.06em; }
     .brand span { color: #985673; }
+    .site-links { display: flex; align-items: center; gap: 28px; }
     nav { display: flex; gap: 28px; align-items: center; font-size: 14px; font-weight: 700; }
     nav a { text-decoration: none; }
     nav a:hover { color: #985673; }
+    .language-switch { gap: 6px; white-space: nowrap; }
+    .language-switch a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
     .hero { overflow: hidden; background: radial-gradient(ellipse at 85% 10%, #ffe8c6 0%, transparent 48%), linear-gradient(125deg, #fbe5de 5%, #f8dbe1 52%, #f6e4ee 100%); color: var(--ink); }
     .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 45px; align-items: center; min-height: 575px; padding-top: 45px; padding-bottom: 95px; }
     .eyebrow { margin: 0 0 18px; color: #895570; font-size: 12px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
@@ -73,7 +76,8 @@
     .legal p { margin: 4px 0; }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 36px, 1120px); }
-      .nav { min-height: 72px; }
+      .nav { min-height: 72px; flex-wrap: wrap; gap: 12px; padding: 16px 0; }
+      .site-links { width: 100%; justify-content: space-between; gap: 12px; }
       nav { gap: 16px; font-size: 13px; }
       .hero-grid, .about-grid { grid-template-columns: 1fr; }
       .hero-grid { gap: 5px; padding-top: 60px; padding-bottom: 65px; }
@@ -91,34 +95,112 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Brototo, accueil">BROTO<span>TO.</span></a>
-      <nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#studio">Le studio</a><a href="#contact">Contact</a></nav>
+      <a class="brand" href="#top" aria-label="Brototo">BROTO<span>TO.</span></a>
+      <div class="site-links">
+        <nav aria-label="Main navigation" data-fr-aria-label="Navigation principale">
+          <a href="#projets" data-fr="Projets">Projects</a>
+          <a href="#studio" data-fr="Le studio">The studio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <nav class="language-switch" aria-label="Language" data-fr-aria-label="Langue">
+          <a id="language-en" href="?lang=en" lang="en" aria-current="page">EN</a>
+          <span aria-hidden="true">/</span>
+          <a id="language-fr" href="?lang=fr" lang="fr">FR</a>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="top">
     <div class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Studio indépendant · France</p>
-          <h1>Des idées qui <em>se jouent.</em></h1>
-          <p class="intro">Chez Brototo, nous imaginons des jeux et des expériences mobiles créatives, accessibles et pleines de bonne humeur.</p>
-          <div class="actions"><a class="button" href="#projets">Découvrir nos projets <span aria-hidden="true">&nbsp;↗</span></a><a class="button secondary" href="#contact">Nous contacter</a></div>
+          <p class="eyebrow" data-fr="Studio indépendant · France">Independent studio · France</p>
+          <h1><span data-fr="Des idées qui ">Ideas made to </span><em data-fr="se jouent.">play.</em></h1>
+          <p class="intro" data-fr="Chez Brototo, nous imaginons des jeux et des expériences mobiles créatives, accessibles et pleines de bonne humeur.">At Brototo, we imagine creative, accessible mobile games and experiences full of joy.</p>
+          <div class="actions">
+            <a class="button" href="#projets"><span data-fr="Découvrir nos projets">Explore our projects</span> <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="button secondary" href="#contact" data-fr="Nous contacter">Get in touch</a>
+          </div>
         </div>
         <div class="art" aria-hidden="true"><div class="art-bg"></div><div class="phone"><div class="screen"><span class="sparkle">✦</span><strong>PLAY<br>CREATE<br>REPEAT.</strong><small>GOOD IDEAS INSIDE</small></div></div><div class="sticker">MADE<br>FOR FUN ✦</div></div>
       </div>
     </div>
     <section id="projets">
       <div class="wrap">
-        <div class="section-top"><div><p class="section-label">Notre univers</p><h2>Des projets à<br>découvrir.</h2></div><p>Des idées ludiques, pensées pour partager de bons moments.</p></div>
+        <div class="section-top">
+          <div>
+            <p class="section-label" data-fr="Notre univers">Our world</p>
+            <h2><span data-fr="Des projets à">Projects to</span><br><span data-fr="découvrir.">discover.</span></h2>
+          </div>
+          <p data-fr="Des idées ludiques, pensées pour partager de bons moments.">Playful ideas made for sharing good times.</p>
+        </div>
         <div class="projects">
-          <article class="project couple"><span class="pill">Jeux à deux</span><h3>Couple Arena</h3><p>Des jeux et expériences interactives à partager en couple.</p><a href="https://couple-arena.com">Découvrir Couple Arena ↗</a></article>
-          <article class="project future"><span class="pill">En préparation</span><h3>La suite arrive.</h3><p>De nouvelles idées et de nouveaux jeux mobiles prennent forme chez Brototo.</p></article>
+          <article class="project couple">
+            <span class="pill" data-fr="Jeux à deux">Games for two</span>
+            <h3>Couple Arena</h3>
+            <p data-fr="Des jeux et expériences interactives à partager en couple.">Games and interactive experiences for couples.</p>
+            <a href="https://couple-arena.com" data-fr="Découvrir Couple Arena ↗">Explore Couple Arena ↗</a>
+          </article>
+          <article class="project future">
+            <span class="pill" data-fr="En préparation">Coming soon</span>
+            <h3 data-fr="La suite arrive.">More to come.</h3>
+            <p data-fr="De nouvelles idées et de nouveaux jeux mobiles prennent forme chez Brototo.">New ideas and mobile games are taking shape at Brototo.</p>
+          </article>
         </div>
       </div>
     </section>
-    <section id="studio" class="about"><div class="wrap about-grid"><div><p class="section-label">Bonjour, nous c’est Brototo</p><h2>De la créativité<br>dans la poche.</h2></div><div><p>Brototo est un studio français de développement de jeux vidéo et d’applications mobiles. Nous aimons transformer des idées simples en expériences divertissantes.</p><p>Notre envie : créer des moments de jeu faciles à découvrir et agréables à partager.</p></div></div></section>
-    <section id="contact" class="contact"><div class="wrap contact-row"><div><p class="section-label">On se parle ?</p><h2>Une idée, une question ?</h2><p>Nous serions ravis d’échanger avec vous.</p></div><a class="button" href="mailto:alexandre@brototo.fr">Écrivez-nous ↗</a></div></section>
+    <section id="studio" class="about">
+      <div class="wrap about-grid">
+        <div>
+          <p class="section-label" data-fr="Bonjour, nous c’est Brototo">Hello, we're Brototo</p>
+          <h2><span data-fr="De la créativité">Creativity in</span><br><span data-fr="dans la poche.">your pocket.</span></h2>
+        </div>
+        <div>
+          <p data-fr="Brototo est un studio français de développement de jeux vidéo et d’applications mobiles. Nous aimons transformer des idées simples en expériences divertissantes.">Brototo is a French game and mobile app development studio. We like turning simple ideas into entertaining experiences.</p>
+          <p data-fr="Notre envie : créer des moments de jeu faciles à découvrir et agréables à partager.">Our goal: to create moments of play that are easy to discover and fun to share.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="wrap contact-row">
+        <div>
+          <p class="section-label" data-fr="On se parle ?">Let's talk?</p>
+          <h2 data-fr="Une idée, une question ?">An idea or a question?</h2>
+          <p data-fr="Nous serions ravis d’échanger avec vous.">We'd love to hear from you.</p>
+        </div>
+        <a class="button" href="mailto:alexandre@brototo.fr" data-fr="Écrivez-nous ↗">Write to us ↗</a>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap"><div class="footer-top"><a class="brand" href="#top">BROTO<span>TO.</span></a><a href="/privacy/">Privacy Policy</a></div><div class="legal"><p>BROTOTO SAS - France · SIREN : 943855155</p><p>Siège social : 2 RUE SAINT-JEAN, 51340 VANAULT-LES-DAMES</p><p>Directeur de publication : Alexandre ROSA · Hébergement : GitHub Pages, GitHub Inc.</p><p>© 2026 BROTOTO. Tous droits réservés.</p></div></div></footer>
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#top">BROTO<span>TO.</span></a>
+        <a href="/privacy/">Privacy Policy</a>
+      </div>
+      <div class="legal">
+        <p>BROTOTO SAS - France · SIREN : 943855155</p>
+        <p><span data-fr="Siège social :">Registered office:</span> 2 RUE SAINT-JEAN, 51340 VANAULT-LES-DAMES</p>
+        <p><span data-fr="Directeur de publication :">Publication director:</span> Alexandre ROSA · <span data-fr="Hébergement :">Hosting:</span> GitHub Pages, GitHub Inc.</p>
+        <p data-fr="© 2026 BROTOTO. Tous droits réservés.">© 2026 BROTOTO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    if (new URLSearchParams(window.location.search).get('lang') === 'fr') {
+      document.documentElement.lang = 'fr';
+      document.title = 'BROTOTO — Des idées qui se jouent';
+      document.querySelector('meta[name="description"]').content =
+        'Brototo est un studio français qui imagine des jeux et des expériences mobiles créatives.';
+      document.querySelectorAll('[data-fr]').forEach(element => {
+        element.textContent = element.dataset.fr;
+      });
+      document.querySelectorAll('[data-fr-aria-label]').forEach(element => {
+        element.setAttribute('aria-label', element.dataset.frAriaLabel);
+      });
+      document.getElementById('language-en').removeAttribute('aria-current');
+      document.getElementById('language-fr').setAttribute('aria-current', 'page');
+    }
+  </script>
 </body>
 </html>
