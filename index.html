@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Brototo is a French studio creating playful mobile games and experiences.">
+  <meta name="description" content="Brototo is a French studio creating playful mobile games and experiences." data-fr-content="Brototo est un studio français qui imagine des jeux et des expériences mobiles créatives.">
   <meta name="theme-color" content="#fbe5de">
-  <title>BROTOTO — Ideas made to play</title>
+  <title data-fr="BROTOTO — Des idées qui se jouent">BROTOTO — Ideas made to play</title>
   <link rel="icon" type="image/png" href="/favicon.png">
+  <script src="/assets/site.js" defer></script>
   <style>
     :root { color-scheme: light; --ink: #493445; --pink: #f8d2cc; --purple: #895570; --cream: #fffaf5; }
     * { box-sizing: border-box; }
@@ -57,7 +58,8 @@
     .project::after { content: ''; position: absolute; width: 230px; height: 230px; border: 38px solid rgba(255,255,255,.25); border-radius: 50%; right: -36px; top: -45px; }
     .project > * { position: relative; z-index: 1; }
     .project.couple { background: linear-gradient(135deg, #ffe0c9, #f7cad4); }
-    .project.future { background: linear-gradient(135deg, #f6d6d7, #e8d4e8); }
+    .project.egg { background: linear-gradient(135deg, #e7d8ff, #c9e7f3); }
+    .project-icon { position: absolute; z-index: 2; top: 22px; right: 22px; width: 72px; height: 72px; border-radius: 18px; }
     .pill { padding: 6px 11px; border-radius: 50px; background: rgba(255,255,255,.6); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .project h3 { margin: 18px 0 8px; font-size: 32px; line-height: 1.1; letter-spacing: -.04em; }
     .project p { max-width: 360px; margin-bottom: 16px; }
@@ -98,7 +100,7 @@
       <a class="brand" href="#top" aria-label="Brototo">BROTO<span>TO.</span></a>
       <div class="site-links">
         <nav aria-label="Main navigation" data-fr-aria-label="Navigation principale">
-          <a href="#projets" data-fr="Projets">Projects</a>
+          <a href="/games/" data-lang-link data-fr="Jeux">Games</a>
           <a href="#studio" data-fr="Le studio">The studio</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -118,7 +120,7 @@
           <h1><span data-fr="Des idées qui ">Ideas made to </span><em data-fr="se jouent.">play.</em></h1>
           <p class="intro" data-fr="Chez Brototo, nous imaginons des jeux et des expériences mobiles créatives, accessibles et pleines de bonne humeur.">At Brototo, we imagine creative, accessible mobile games and experiences full of joy.</p>
           <div class="actions">
-            <a class="button" href="#projets"><span data-fr="Découvrir nos projets">Explore our projects</span> <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="button" href="/games/" data-lang-link><span data-fr="Découvrir nos jeux">Explore our games</span> <span aria-hidden="true">&nbsp;↗</span></a>
             <a class="button secondary" href="#contact" data-fr="Nous contacter">Get in touch</a>
           </div>
         </div>
@@ -141,10 +143,12 @@
             <p data-fr="Des jeux et expériences interactives à partager en couple.">Games and interactive experiences for couples.</p>
             <a href="https://couple-arena.com" data-fr="Découvrir Couple Arena ↗">Explore Couple Arena ↗</a>
           </article>
-          <article class="project future">
-            <span class="pill" data-fr="En préparation">Coming soon</span>
-            <h3 data-fr="La suite arrive.">More to come.</h3>
-            <p data-fr="De nouvelles idées et de nouveaux jeux mobiles prennent forme chez Brototo.">New ideas and mobile games are taking shape at Brototo.</p>
+          <article class="project egg">
+            <img class="project-icon" src="/games/idle-egg-tycoon/assets/icon.png" alt="" width="512" height="512" loading="lazy">
+            <span class="pill" data-fr="Jeu mobile">Mobile game</span>
+            <h3>Idle Egg Tycoon</h3>
+            <p data-fr="Créez des œufs, faites naître des monstres et développez votre usine.">Create eggs, make monsters and build your factory.</p>
+            <a href="/games/idle-egg-tycoon/" data-lang-link data-fr="Découvrir le jeu ↗">Explore the game ↗</a>
           </article>
         </div>
       </div>
@@ -186,21 +190,5 @@
       </div>
     </div>
   </footer>
-  <script>
-    if (new URLSearchParams(window.location.search).get('lang') === 'fr') {
-      document.documentElement.lang = 'fr';
-      document.title = 'BROTOTO — Des idées qui se jouent';
-      document.querySelector('meta[name="description"]').content =
-        'Brototo est un studio français qui imagine des jeux et des expériences mobiles créatives.';
-      document.querySelectorAll('[data-fr]').forEach(element => {
-        element.textContent = element.dataset.fr;
-      });
-      document.querySelectorAll('[data-fr-aria-label]').forEach(element => {
-        element.setAttribute('aria-label', element.dataset.frAriaLabel);
-      });
-      document.getElementById('language-en').removeAttribute('aria-current');
-      document.getElementById('language-fr').setAttribute('aria-current', 'page');
-    }
-  </script>
 </body>
 </html>
