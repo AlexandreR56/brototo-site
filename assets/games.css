@@ -51,31 +51,35 @@ h1 em { color: #985673; font-style: normal; }
 
 .detail-hero .wrap { padding-top: 48px; padding-bottom: 68px; }
 .back-link { display: inline-block; margin-bottom: 36px; color: #744564; font-size: 14px; font-weight: 700; text-underline-offset: 4px; }
-.detail-intro { display: flex; align-items: center; gap: 24px; }
-.detail-icon { width: 104px; height: 104px; flex: none; border-radius: 24px; box-shadow: 0 10px 24px rgba(73, 52, 69, .12); }
-.detail-intro h1 { margin: 0 0 12px; }
+.detail-intro { display: grid; grid-template-columns: minmax(250px, 320px) minmax(0, 1fr); gap: 40px; align-items: center; }
+.detail-heading { display: flex; grid-column: 2; grid-row: 1; align-items: center; gap: 20px; min-width: 0; }
+.detail-heading > div { min-width: 0; }
+.detail-icon { width: 88px; height: 88px; flex: none; border-radius: 22px; box-shadow: 0 10px 24px rgba(73, 52, 69, .12); }
+.detail-intro h1 { margin: 0 0 12px; font-size: clamp(48px, 6vw, 76px); }
 .detail-intro .lead { max-width: 760px; }
-.download-action { margin-top: 28px; }
-.download-button { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; max-width: 100%; padding: 13px 16px 13px 22px; border: 0; border-radius: 999px; background: #67475b; color: #fff; font: 800 16px Arial, Helvetica, sans-serif; opacity: 1; cursor: not-allowed; }
-.download-status { padding: 7px 12px; border-radius: 999px; background: #fff4f2; color: #493445; font-size: 12px; letter-spacing: .02em; }
-.download-note { margin: 10px 0 0; color: #5d4b54; font-size: 14px; }
+.download-action { grid-column: 1; grid-row: 1; }
+.download-button { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 112px; padding: 20px; border: 1px solid #67475b; border-radius: 24px; background: linear-gradient(135deg, #67475b, #985673); color: #fff; box-shadow: 0 14px 26px rgba(73, 52, 69, .17); font-family: Arial, Helvetica, sans-serif; text-align: left; opacity: 1; cursor: not-allowed; }
+.download-icon { width: 48px; height: 48px; flex: none; padding: 10px; border-radius: 14px; background: rgba(255, 255, 255, .16); }
+.download-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 19px; font-weight: 800; line-height: 1.2; }
+.download-status { padding: 6px 11px; border-radius: 999px; background: #fff4f2; color: #493445; font-size: 13px; font-weight: 800; }
+.download-note { max-width: 300px; margin: 10px 4px 0; color: #5d4b54; font-size: 13px; }
 .feature-image { width: 100%; height: auto; margin-top: 48px; border-radius: 24px; box-shadow: 0 18px 36px rgba(73, 52, 69, .12); }
 .game-overview { padding: 82px 0 48px; }
 .overview-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 65px; align-items: start; }
 .overview-copy p { margin: 4px 0 16px; color: #604d5a; font-size: 18px; }
 .overview-copy p:last-child { margin-bottom: 0; }
-.game-features { padding: 24px 0 100px; }
+.game-features { padding: 24px 0 56px; }
 .feature-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .feature-point { padding: 26px; border: 1px solid #ead8dc; border-radius: 22px; background: #fff; }
 .feature-point h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.025em; }
 .feature-point p { margin-bottom: 0; color: #604d5a; }
-.gallery { padding: 76px 0 100px; background: #f8e8e3; }
+.gallery { padding: 76px 0 64px; background: #f8e8e3; }
 .gallery-intro { max-width: 640px; margin-bottom: 36px; color: #604d5a; }
 .screenshot-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .screenshot-list figure { margin: 0; }
 .screenshot-list img { width: 100%; height: auto; border: 1px solid #e5d7db; border-radius: 20px; box-shadow: 0 12px 22px rgba(73, 52, 69, .08); }
 .screenshot-list figcaption { margin-top: 12px; color: #5d4b54; font-size: 14px; font-weight: 700; }
-.game-faq { padding: 82px 0 20px; }
+.game-faq { padding: 52px 0 20px; }
 .faq-list { max-width: 850px; }
 .faq-list > div { padding: 20px 0; border-bottom: 1px solid #ead8dc; }
 .faq-list h3 { margin-bottom: 8px; font-size: 21px; letter-spacing: -.025em; }
@@ -86,6 +90,13 @@ footer { padding: 38px 0; color: #5d4b54; background: #f8e8e3; font-size: 13px; 
 .footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
 .legal { margin-top: 22px; color: #5d5569; }
 .legal p { margin: 4px 0; }
+
+@media (max-width: 1000px) {
+  .detail-intro { grid-template-columns: 1fr; gap: 24px; }
+  .detail-heading, .download-action { grid-column: 1; }
+  .detail-heading { grid-row: 1; }
+  .download-action { grid-row: 2; width: min(100%, 360px); }
+}
 
 @media (max-width: 720px) {
   .wrap { width: min(100% - 36px, 1120px); }
@@ -101,18 +112,18 @@ footer { padding: 38px 0; color: #5d4b54; background: #f8e8e3; font-size: 13px; 
   .game-card-icon { width: 60px; height: 60px; margin-bottom: 16px; border-radius: 15px; }
   .detail-hero .wrap { padding-top: 32px; padding-bottom: 46px; }
   .back-link { margin-bottom: 30px; }
-  .detail-intro { align-items: flex-start; gap: 16px; }
+  .detail-heading { align-items: flex-start; gap: 16px; }
   .detail-icon { width: 72px; height: 72px; border-radius: 18px; }
   .detail-intro h1 { font-size: clamp(36px, 10vw, 54px); }
   .feature-image { margin-top: 34px; border-radius: 17px; }
   .game-overview { padding: 58px 0 36px; }
   .overview-grid { grid-template-columns: 1fr; gap: 0; }
-  .game-features { padding: 18px 0 70px; }
+  .game-features { padding: 18px 0 40px; }
   .feature-points { grid-template-columns: 1fr; }
-  .gallery { padding: 58px 0 70px; }
+  .gallery { padding: 58px 0 44px; }
   .screenshot-list { display: grid; grid-auto-flow: column; grid-auto-columns: min(72vw, 320px); grid-template-columns: none; overflow-x: auto; padding-bottom: 15px; scroll-snap-type: x mandatory; }
   .screenshot-list figure { scroll-snap-align: start; }
-  .game-faq { padding: 58px 0 0; }
+  .game-faq { padding: 36px 0 0; }
   .more-games { padding: 55px 0 70px; }
 }
 
