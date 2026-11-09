@@ -8,7 +8,7 @@ The public site is https://brototo.fr/. English is the default language. The hom
 
 - [Home](https://brototo.fr/): studio overview and contact details.
 - [Games](https://brototo.fr/games/): current game catalogue.
-- [Idle Egg Tycoon](https://brototo.fr/games/idle-egg-tycoon/): a free mobile game about creating monsters from eggs, with gameplay details and screenshots. Coming soon; the site has no public store link yet.
+- [Idle Egg Tycoon](https://brototo.fr/games/idle-egg-tycoon/): a free mobile game about creating monsters from eggs, with gameplay details and screenshots. Available for Android on [Google Play](https://play.google.com/store/apps/details?id=com.brototo.idleeggtycoon).
 - [Privacy Policy](https://brototo.fr/privacy/): data handling for BROTOTO games and apps.
 
 ## About the studio

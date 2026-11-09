@@ -58,7 +58,8 @@ h1 em { color: #985673; font-style: normal; }
 .detail-intro h1 { margin: 0 0 12px; font-size: clamp(48px, 6vw, 76px); }
 .detail-intro .lead { max-width: 760px; }
 .download-action { grid-column: 1; grid-row: 1; }
-.download-button { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 112px; padding: 20px; border: 1px solid #67475b; border-radius: 24px; background: linear-gradient(135deg, #67475b, #985673); color: #fff; box-shadow: 0 14px 26px rgba(73, 52, 69, .17); font-family: Arial, Helvetica, sans-serif; text-align: left; opacity: 1; cursor: not-allowed; }
+.download-button { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 112px; padding: 20px; border: 1px solid #67475b; border-radius: 24px; background: linear-gradient(135deg, #67475b, #985673); color: #fff; box-shadow: 0 14px 26px rgba(73, 52, 69, .17); font-family: Arial, Helvetica, sans-serif; text-align: left; text-decoration: none; cursor: pointer; }
+.download-button:hover { background: linear-gradient(135deg, #583b4d, #89506a); }
 .download-icon { width: 48px; height: 48px; flex: none; padding: 10px; border-radius: 14px; background: rgba(255, 255, 255, .16); }
 .download-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 19px; font-weight: 800; line-height: 1.2; }
 .download-status { padding: 6px 11px; border-radius: 999px; background: #fff4f2; color: #493445; font-size: 13px; font-weight: 800; }
